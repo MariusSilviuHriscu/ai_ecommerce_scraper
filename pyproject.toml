@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "ai-ecommerce-scraper"
+version = "0.1.0"
+description = ""
+authors = ["MariusSilviuHriscu <hriscumarius65536@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ai_ecommerce_scraper"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "0.28"
+langchain = "^0.0.348"
+bs4 = "^0.0.1"
+lxml = "^4.9.4"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.27.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
