@@ -12,6 +12,7 @@ openai = "0.28"
 langchain = "^0.0.348"
 bs4 = "^0.0.1"
 lxml = "^4.9.4"
+sqlalchemy = "^2.0.23"
 
 
 [tool.poetry.group.dev.dependencies]
