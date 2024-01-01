@@ -3,7 +3,7 @@ from typing import Generator
 
 def get_pages(_):
     
-    return (f'https://www.dedeman.ro/ro/hote-bucatarie-si-accesorii/c/669?page={x}' for x in range(1,4))
+    return (f'https://www.dedeman.ro/ro/mobilier-birou/c/96?page={x}' for x in range(1,19))
 
 def get_product(input_html_str:str) -> Generator:
     

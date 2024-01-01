@@ -37,10 +37,13 @@ class RequestsHandler:
         if self.refresh_manager:
             self.refresh_manager.refresh(session=self.session)
 
-    def get(self, url: str, params: dict[str, str], raw_response=False):
+    def get(self, url: str, params: dict[str, str], raw_response=False, cache_flag : bool = True):
+        if raw_response:
+            response = self.session.get(url=url, params=params)
+            
+            return response
         cached_response = self.get_cached_response(url)
         if cached_response:
-            print('got result')
             return cached_response.response_text
 
         response = self.session.get(url=url, params=params)
@@ -48,9 +51,8 @@ class RequestsHandler:
         if response.status_code != 200:
             raise Exception("Something went whack!")
 
-        if raw_response:
-            return response
-        self.cache_response(url, response.text)
+        if cache_flag:
+            self.cache_response(url, response.text)
         return response.text
     def post(self, url: str, data: dict[str, str], raw_response=False):
         response = self.session.post(url=url, data=data)

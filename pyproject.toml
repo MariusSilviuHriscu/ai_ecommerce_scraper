@@ -13,6 +13,7 @@ langchain = "^0.0.348"
 bs4 = "^0.0.1"
 lxml = "^4.9.4"
 sqlalchemy = "^2.0.23"
+mlscraper = "^0.1.2"
 
 
 [tool.poetry.group.dev.dependencies]
