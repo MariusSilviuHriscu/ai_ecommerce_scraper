@@ -8,5 +8,8 @@ ProductInfo = typing.Dict[str,str]
 class ProductData:
     
     url : str
-    product_info : ProductInfo
+    product_info : dict
     raw_text_response : str = ''
+    @property
+    def product_info_keys(self):
+        return self.product_info.keys()
