@@ -37,4 +37,6 @@ def get_product_data(input_html):
     price = soup.find('span',class_='money',attrs={'id':'ProductPrice'}).text
     
     description = soup.find('div',class_='description rte')
-    yield {'name':name,'price':price,'description':description}
+    picture  =  soup.find('div',class_='featured-container').find('img').get('src')[2::]
+    print(f'found {picture}')
+    yield {'name':name,'price':price,'description':description,'image':picture}
